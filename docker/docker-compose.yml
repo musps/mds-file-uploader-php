@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+
+  # ___ Application
+  app:
+    build:
+      context: ./conf/app/
+      dockerfile: app.dockerfile
+    container_name: myproject-app
+    working_dir: /var/www
+    volumes:
+      - ./../app/:/var/www
+    links:
+      - clamav
+
+  # ___ Clamav
+  clamav:
+    image: mkodockx/docker-clamav
+    container_name: myproject-clamav
+    ports:
+      - 3310:3310
+
+  # ___ Web
+  nginx:
+    image: nginx:1.15.5
+    container_name: myproject-nginx
+    working_dir: /var/www
+    links:
+      - app
+      - clamav
+    ports:
+      - 8080:443
+    volumes:
+      - ./conf/nginx/www.conf:/etc/nginx/conf.d/default.conf
+      - ./conf/nginx/cert:/etc/nginx/cert

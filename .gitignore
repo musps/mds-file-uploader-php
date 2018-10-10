@@ -1,0 +1,5 @@
+/docker/conf/nginx/cert/*
+!docker/conf/nginx/cert/.gitkeep
+/app/files/*
+!app/files/.gitkeep
+/app/vendor/

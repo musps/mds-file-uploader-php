@@ -1,0 +1,12 @@
+{
+    "name": "sercan/app",
+    "authors": [
+        {
+            "name": "Sercan Yildiz",
+            "email": "ysercanz@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^2.5"
+    }
+}
