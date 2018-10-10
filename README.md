@@ -11,6 +11,12 @@ Upload limitations: (authorized file extension)
 
 Maximum upload file size: 4M
 
+Once an image is uploaded a direct access url is generated with an access token.
+If you lost this token you cannot regenerate this one and you have to re-submit your file.
+
+Url example: 
+https://127.0.0.1:8080/files/5eb19504c85f2f488756c06789ed1423.png?token=b3b00d46bcd2bfbba3380863be020656
+
 # Directories structure
 
 ## app
