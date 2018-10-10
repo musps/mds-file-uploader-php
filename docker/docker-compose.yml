@@ -11,15 +11,6 @@ services:
     working_dir: /var/www
     volumes:
       - ./../app/:/var/www
-    links:
-      - clamav
-
-  # ___ Clamav
-  clamav:
-    image: mkodockx/docker-clamav
-    container_name: myproject-clamav
-    ports:
-      - 3310:3310
 
   # ___ Web
   nginx:
@@ -28,7 +19,6 @@ services:
     working_dir: /var/www
     links:
       - app
-      - clamav
     ports:
       - 8080:443
     volumes:

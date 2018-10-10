@@ -43,7 +43,7 @@ if ($dSearchPos === 1 && !empty($_GET['token'])) {
     header('Content-Type: ' . $sFileContentType);
     echo $sFileContent;
 
-  } catch(\Exception $e) {
+  } catch (\Exception $e) {
     header('location: /');
     exit();
   }
